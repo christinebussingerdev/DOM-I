@@ -40,3 +40,80 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+
+// NAVI ---------------------------
+let navi = document.querySelectorAll('header nav a');
+
+for (let i = 0; i < navi.length; i++) {
+  let newContent = siteContent.nav[`nav-item-${i + 1}`];
+  navi[i].textContent = `${newContent}`;
+}
+
+
+
+// BANNER ------------------------
+let headerBanner = document.querySelector('.cta');
+
+headerBanner.querySelector('h1').textContent = `${siteContent.cta.h1}`;
+
+headerBanner.querySelector('button').textContent = `${siteContent.cta.button}`;
+
+document.querySelector('#cta-img').src = `${siteContent.cta["img-src"]}`;
+
+
+// MAIN CONTENT ------------------
+let mainContent = document.querySelector('.main-content');
+
+let topTexts = mainContent.querySelectorAll('.top-content .text-content');
+// features section
+topTexts[0].querySelector('h4').textContent = `${siteContent['main-content']["features-h4"]}`
+
+topTexts[0].querySelector('p').textContent = `${siteContent['main-content']['features-content']}`
+
+
+//ABOUT SECTION
+topTexts[1].querySelector('h4').textContent = `${siteContent['main-content']["about-h4"]}`
+
+topTexts[1].querySelector('p').textContent = `${siteContent['main-content']['about-content']}`
+
+
+// MIDDLE IMG -------------------------
+document.querySelector('.middle-img').src = `${siteContent['main-content']["middle-img-src"]}`
+
+
+// BOTTOM CONTENT ----------------------
+let bottomContent = document.querySelector('.bottom-content')
+
+let bottomTextSections = bottomContent.querySelectorAll('.text-content')
+
+bottomTextSections[0].querySelector('h4').textContent = `${siteContent['main-content']['services-h4']}`
+
+bottomTextSections[0].querySelector('p').textContent = `${siteContent['main-content']['services-content']}`
+
+bottomTextSections[1].querySelector('h4').textContent = `${siteContent['main-content']['product-h4']}`
+
+bottomTextSections[1].querySelector('p').textContent = `${siteContent['main-content']['product-content']}`
+
+bottomTextSections[2].querySelector('h4').textContent = `${siteContent['main-content']['vision-h4']}`
+
+bottomTextSections[2].querySelector('p').textContent = `${siteContent['main-content']['vision-content']}`
+
+// CONTACT ----------------------------------
+
+let contactSection = document.querySelector('.contact')
+
+contactSection.querySelector('h4').textContent = `${siteContent.contact['contact-h4']}`
+
+let contactParas = contactSection.querySelectorAll('p')
+
+contactParas[0].textContent = `${siteContent.contact.address}`
+contactParas[1].textContent = `${siteContent.contact.phone}`
+contactParas[2].textContent = `${siteContent.contact.email}`
+
+// FOOTER ----------------------------------------
+
+let footerSection = document.querySelector('footer')
+
+footerSection.querySelector('p').textContent = `${siteContent.footer.copyright}`
